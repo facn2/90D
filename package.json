@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node src/index.js",
     "devStart": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "lint": "semistandard"
   },
