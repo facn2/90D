@@ -10,6 +10,10 @@
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "lint": "semistandard"
   },
+  "Pre-commit": [
+    "precommit-msg",
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/facn2/90D.git"
@@ -22,6 +26,7 @@
   "homepage": "https://github.com/facn2/90D#readme",
   "devDependencies": {
     "nodemon": "^1.12.0",
+    "pre-commit": "^1.2.2",
     "semistandard": "^11.0.0"
   },
   "dependencies": {
