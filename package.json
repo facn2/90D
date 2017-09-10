@@ -10,7 +10,7 @@
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "lint": "semistandard"
   },
-  "Pre-commit": [
+  "pre-commit": [
     "precommit-msg",
     "lint"
   ],
