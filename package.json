@@ -9,6 +9,10 @@
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "lint": "semistandard"
   },
+  "pre-commit": [
+    "precommit-msg",
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/facn2/90D.git"
