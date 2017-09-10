@@ -1,0 +1,24 @@
+{
+  "name": "90d",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
+    "lint": "semistandard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facn2/90D.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facn2/90D/issues"
+  },
+  "homepage": "https://github.com/facn2/90D#readme",
+  "devDependencies": {
+    "semistandard": "^11.0.0"
+  }
+}
