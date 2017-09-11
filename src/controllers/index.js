@@ -1,2 +1,5 @@
-var boo = 'boo';
-console.log(boo);
+// const express = require('express');
+// const router = express.Router();
+
+
+// module.exports = router;
