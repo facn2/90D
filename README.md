@@ -1,6 +1,7 @@
 # 90D
 
 [![Build Status](https://travis-ci.org/facn2/90D.svg?branch=travis)](https://travis-ci.org/facn2/90D)
+[![codecov](https://codecov.io/gh/facn2/90D/branch/master/graph/badge.svg)](https://codecov.io/gh/facn2/90D)
 
 ### Check out our app
 
