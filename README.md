@@ -41,3 +41,13 @@ As a user I want to...
 + View all my current goals
 + View more details about specific goals
 + Check off the daily goal
+
+### Resources
+
+A list of resources that we found useful for this project.
+
+#### Testing
++ [Chai BDD](http://chaijs.com/api/bdd/)
++ [Supertest npm](https://www.npmjs.com/package/supertest)
++ [Mocha Docs](https://mochajs.org/)
++ [Mocha Chai Gist](https://gist.github.com/yoavniran/1e3b0162e1545055429e)
