@@ -8,8 +8,8 @@
     "devStart": "nodemon src/index.js",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
     "lint": "semistandard",
-    "test": "nyc mocha ./src/tests/router.test.js",
-    "test:watch": "mocha --watch ./src/tests/router.test.js",
+    "test": "nyc mocha ./src/tests/",
+    "test:watch": "mocha --watch ./src/tests/",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
   "pre-commit": [
