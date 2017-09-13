@@ -7,7 +7,13 @@
     "start": "node src/index.js",
     "devStart": "nodemon src/index.js",
     "precommit-msg": "echo 'Pre-commit checks...' && exit 0",
-    "lint": "semistandard"
+    "lint": "semistandard",
+    "test": "nyc mocha ./src/tests/",
+    "test:watch": "mocha --watch ./src/tests/",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
+  },
+  "semistandard": {
+    "globals": ["describe", "it"]
   },
   "pre-commit": [
     "precommit-msg",
@@ -25,7 +31,8 @@
   "homepage": "https://github.com/facn2/90D#readme",
   "devDependencies": {
     "chai": "^4.1.2",
-    "mocha": "^3.5.1",
+    "codecov": "^2.3.0",
+    "mocha": "^3.5.3",
     "nodemon": "^1.12.0",
     "nyc": "^11.2.1",
     "pre-commit": "^1.2.2",
