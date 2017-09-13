@@ -12,6 +12,9 @@
     "test:watch": "mocha --watch ./src/tests/",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov"
   },
+  "semistandard": {
+    "globals": ["describe", "it"]
+  },
   "pre-commit": [
     "precommit-msg",
     "lint"
