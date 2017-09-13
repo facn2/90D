@@ -1,5 +1,4 @@
 const { users } = require('../database/user_schema');
-const mongoose = require('mongoose');
 
 module.exports = (req, res, next) => {
   console.log(req.body);
