@@ -15,9 +15,11 @@
   "semistandard": {
     "globals": [
       "describe",
-      "it",
+      "it"
     ],
-    "ignore": "newUser.js",
+    "ignore": [ 
+      "/src/controllers/newUser.js"
+    ]
   },
   "pre-commit": [
     "precommit-msg",
