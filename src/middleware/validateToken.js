@@ -7,7 +7,8 @@ module.exports = (req, res, next) => {
   const userSession = parsedCookie.user_session;
   verify(userSession, process.env.SECRET_KEY, (err, decoded) => {
     if (err) {
-      console.log(err);
+      // error page saying not logged in
+      return console.log(err);
     } else {
       console.log(res.locals);
       next();
