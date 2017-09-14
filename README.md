@@ -7,6 +7,8 @@
 
 https://nine0d.herokuapp.com/
 
+---
+
 ### Local Install Instructions
 
 ```
@@ -16,12 +18,15 @@ git clone https://github.com/facn2/90D.git
 ```
 npm install
 ```
+---
 
 ### Contributors
 
 [@Wyrd00](https://github.com/Wyrd00)
 
 [@matthewdking](https://github.com/matthewdking)
+
+---
 
 ### Tech Stack
 
@@ -30,6 +35,8 @@ npm install
 + MongoDB
 + Mongoose
 + Tachyons
+
+---
 
 ### User Journey
 
@@ -41,6 +48,8 @@ As a user I want to...
 + View all my current goals
 + View more details about specific goals
 + Check off the daily goal
+
+---
 
 ### Resources
 
@@ -59,6 +68,12 @@ A list of resources that we found useful for this project.
 #### Post Forms
 + [Express.js: Working with Forms](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms)
 
-#### Validation
+#### Passwords
 + [bcrypt](https://www.npmjs.com/package/bcrypt)
+
+#### Mongo/Mongoose
 + [What does .find return](https://stackoverflow.com/questions/33117766/mongo-with-express-what-does-find-return)
+
+#### Validation
++ [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
++ [cookie](https://www.npmjs.com/package/cookie)
