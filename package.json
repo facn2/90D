@@ -17,7 +17,7 @@
       "describe",
       "it"
     ],
-    "ignore": [ 
+    "ignore": [
       "/src/controllers/newUser.js"
     ]
   },
