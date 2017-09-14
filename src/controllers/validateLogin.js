@@ -2,7 +2,6 @@ const { users } = require('../database/user_schema');
 const bcrypt = require('bcryptjs');
 
 module.exports = (req, res) => {
-  console.log(req.body);
   let userData = req.body;
   if (!userData.email || !userData.password) {
     res.render('error', {
@@ -14,16 +13,14 @@ module.exports = (req, res) => {
     if (err) {
       // if an error was returned
       console.log(err);
-    } else if (!user) {
+    } else if (!user) { // this isn't quite right - actually returns empty array
       // Nothing matched
       res.render('error', {
         message: 'Yo go double check that email!', type: 'error'
       });
     } else {
       // this is okay
-      console.log(user);
       let dbPassword = user[0].password;
-      console.log(dbPassword);
       bcrypt.compare(userData.password, dbPassword, (err, response) => {
         if (err) {
           console.log(err);
