@@ -12,7 +12,7 @@ router.get('/signup', signup);
 router.post('/newUser', newUser);
 router.get('/login', login);
 router.post('/validateLogin', validate);
-router.get('/newgoal', newGoal)
+router.get('/newGoal', newGoal);
 
 router.use(error.client);
 router.use(error.server);
