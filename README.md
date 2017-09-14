@@ -58,3 +58,7 @@ A list of resources that we found useful for this project.
 
 #### Post Forms
 + [Express.js: Working with Forms](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/forms)
+
+#### Validation
++ [bcrypt](https://www.npmjs.com/package/bcrypt)
++ [What does .find return](https://stackoverflow.com/questions/33117766/mongo-with-express-what-does-find-return)
