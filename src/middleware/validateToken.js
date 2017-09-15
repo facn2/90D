@@ -8,9 +8,11 @@ module.exports = (req, res, next) => {
   verify(userSession, process.env.SECRET_KEY, (err, decoded) => {
     if (err) {
       // error page saying not logged in
-      return console.log(err);
+      res.render('error', {
+        message: 'What you playing at? Go log in!', type: 'error'
+      });
     } else {
-      console.log(res.locals);
+      res.locals = decoded;
       next();
     }
   });
