@@ -77,3 +77,4 @@ A list of resources that we found useful for this project.
 #### Validation
 + [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
 + [cookie](https://www.npmjs.com/package/cookie)
++ [Use of res.locals for validation middleware](http://expressjs.com/en/api.html#res.locals)
