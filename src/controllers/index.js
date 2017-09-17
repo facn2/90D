@@ -10,14 +10,16 @@ const newGoal = require('./newGoal');
 const addGoal = require('./addGoal');
 const error = require('./error');
 const goals = require('./goals');
+const logout = require('./logout');
 
 router.get('/signup', signup);
 router.post('/newUser', newUser);
-router.get('/login', login);
+router.get('/', login);
 router.post('/validateLogin', validate);
-router.post('/addGoal', addGoal);
 router.get('/newGoal', validateToken, newGoal);
-router.get('/', goals);
+router.get('/goals', goals);
+router.get('/logout', logout);
+router.post('/addGoal', addGoal);
 
 router.use(error.client);
 router.use(error.server);

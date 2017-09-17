@@ -9,13 +9,13 @@ const app = require('./../app');
 describe('login', () => {
   it('status code should be 200', (done) => {
     request(app)
-      .get('/login')
+      .get('/')
       .expect(200, done);
   });
 
   it('response header - no error & not empty', (done) => {
     request(app)
-      .get('/login')
+      .get('/')
       .end((err, res) => {
         console.log(res.header);
         should.not.exist(err);
