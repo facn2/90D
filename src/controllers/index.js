@@ -11,10 +11,10 @@ const goals = require('./goals');
 
 router.get('/signup', signup);
 router.post('/newUser', newUser);
-router.get('/login', login);
+router.get('/', login);
 router.post('/validateLogin', validate);
 router.get('/newGoal', newGoal);
-router.get('/', goals);
+router.get('/goals', goals);
 
 router.use(error.client);
 router.use(error.server);
