@@ -19,11 +19,7 @@ router.post('/validateLogin', validate);
 router.get('/newGoal', validateToken, newGoal);
 router.get('/goals', goals);
 router.get('/logout', logout);
-<<<<<<< HEAD
 router.post('/addGoal', addGoal);
-router.get('/', goals);
-=======
->>>>>>> 1b1ed57ce653ccb1fe21f5d29a6ecf7a6d315170
 
 router.use(error.client);
 router.use(error.server);
