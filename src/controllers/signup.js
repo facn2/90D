@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-  res.render('signup');
+  res.render('signup', {layout: 'login'});
 };
