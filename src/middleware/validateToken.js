@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
         message: 'What you playing at? Go log in!', type: 'error'
       });
     } else {
-      res.locals.email = decoded;
+      res.append('Set-Cookie', `user_email=${decoded}`);
       next();
     }
   });
