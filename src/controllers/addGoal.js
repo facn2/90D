@@ -24,7 +24,7 @@ module.exports = (req, res) => {
         message: 'Sorry, your ambitions are breaking up with you. It\'s not you, it\'s them', type: 'error'
       });
     } else {
-      res.redirect('/');
+      res.redirect('/goals');
     }
   });
 };
