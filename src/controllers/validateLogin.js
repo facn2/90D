@@ -1,5 +1,7 @@
 const { users } = require('../database/user_schema');
 const bcrypt = require('bcryptjs');
+const { sign } = require('jsonwebtoken');
+require('env2')('./config.env');
 
 module.exports = (req, res) => {
   let userData = req.body;
@@ -29,6 +31,8 @@ module.exports = (req, res) => {
             message: 'Yo those password don\'t match!', type: 'error'
           });
         } else {
+          let token = sign(userData.email, process.env.SECRET_KEY);
+          res.append('Set-Cookie', `user_session=${token}`);
           res.redirect('/');
         }
       });

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const validateToken = require('../middleware/validateToken');
 
 const signup = require('./signup');
 const newUser = require('./newUser');
@@ -13,7 +14,7 @@ router.get('/signup', signup);
 router.post('/newUser', newUser);
 router.get('/login', login);
 router.post('/validateLogin', validate);
-router.get('/newGoal', newGoal);
+router.get('/newGoal', validateToken, newGoal);
 router.get('/', goals);
 
 router.use(error.client);
