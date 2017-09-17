@@ -16,7 +16,7 @@ router.get('/', login);
 router.post('/validateLogin', validate);
 router.get('/newGoal', newGoal);
 router.get('/goals', goals);
-router.get('logout', logout);
+router.get('/logout', logout);
 
 router.use(error.client);
 router.use(error.server);
