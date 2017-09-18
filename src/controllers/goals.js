@@ -11,8 +11,7 @@ module.exports = (req, res) => {
     if (err) {
       console.log('This is a find error: ', err);
     } else {
-      console.log('This is the result: ', results);
-      res.render('goals');
+      res.render('goals', { goals: results });
     }
   });
 };
