@@ -19,6 +19,8 @@ if (mm < 10) {
 }
 var endDate = dd + '/' + mm + '/' + yyyy;
 var dateContainer = document.getElementById('dateContainer');
+var dateInput = document.getElementById('dateInput');
 var date = document.createElement('h3');
+dateInput.value = endDate;
 date.innerText = endDate;
 dateContainer.appendChild(date);
