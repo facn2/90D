@@ -17,7 +17,7 @@ router.post('/newUser', newUser);
 router.get('/', login);
 router.post('/validateLogin', validate);
 router.get('/newGoal', validateToken, newGoal);
-router.get('/goals', goals);
+router.get('/goals', validateToken, goals);
 router.get('/logout', logout);
 router.post('/addGoal', addGoal);
 

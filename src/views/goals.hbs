@@ -1,3 +1,9 @@
 <section>
   <h2>goals</h2>
+  <ul>
+    {{#each goals}}
+      <li>Daily Goal: {{this.dailyGoal}}</li>
+      <li>90 Day Goal: {{this.goal90}}</li>
+    {{/each}}
+  </ul>
 </section>
