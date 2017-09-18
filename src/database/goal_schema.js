@@ -28,6 +28,10 @@ const goalSchema = mongoose.Schema({
   dailyCounter: {
     type: Number,
     default: 0
+  },
+  endDate: {
+    type: Date,
+    required: true
   }
 });
 
