@@ -1,5 +1,5 @@
 const {
-  goal
+  Goal
 } = require('../database/goal_schema');
 const cookie = require('cookie');
 
@@ -15,14 +15,12 @@ module.exports = (req, res) => {
       type: 'error'
     });
   }
-  let newGoal = new goal({
-    goals: {
-      owner: email,
-      goal90: req.body.goal90,
-      dailyGoal: req.body.dailyGoal,
-      description: req.body.description,
-      reward: req.body.reward
-    }
+  let newGoal = new Goal({
+    owner: email,
+    goal90: req.body.goal90,
+    dailyGoal: req.body.dailyGoal,
+    description: req.body.description,
+    reward: req.body.reward
   });
 
   console.log(newGoal);

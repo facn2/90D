@@ -1,11 +1,18 @@
-const { goals } = require('../database/user_schema');
+const { Goal } = require('../database/goal_schema');
+const cookie = require('cookie');
 require('env2')('./config.env');
 
 module.exports = (req, res) => {
-  const email = res.locals.email;
+  // const email = res.locals.email;
+  const parsedCookie = cookie.parse(req.headers.cookie);
+  const userEmail = parsedCookie.user_email;
   // get some data from the database
-  // goals.findAll({ 'email': email });
-  console.log(goals.find({ 'email': email }));
-  // all goals with user email
-  res.render('goals');
+  Goal.find({ 'owner': userEmail }, (err, results) => {
+    if (err) {
+      console.log('This is a find error: ', err);
+    } else {
+      console.log('This is the result: ', results);
+      res.render('goals');
+    }
+  });
 };
