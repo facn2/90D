@@ -1,14 +1,17 @@
 <section>
   <h2>goals</h2>
-  <ul>
+  <ul id="goalList">
     {{#each goals}}
+    <div class="">
       <li>
         <form action='/updateGoal' method='post'>Daily Goal: {{this.dailyGoal}}
-          {{!-- <label for="dailyGoal" class="clip"></label> --}}
           <input class="clip" value={{this.dailyGoal}} name="dailyGoal">
           <input type="checkbox", name="completion", onClick="submit()"></li>
       <li>90 Day Goal: {{this.goal90}}</li>
-    </form>
+      <li class="clip" id="endDate">{{this.endDate}}</li>
+      </form>
+    </div>
     {{/each}}
   </ul>
+  {{>goalCountdown}}
 </section>
