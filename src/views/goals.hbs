@@ -4,7 +4,7 @@
     {{#each goals}}
       <div class="">
         <li>
-          <form action='/updateGoal' method='post'>{{!-- <label for="dailyGoal" class="clip"></label> --}}
+          <form action='/updateGoal' method='post'>Daily Goal: {{this.dailyGoal}}
             <input class="clip" value= {{this.dailyGoal}} name="dailyGoal">
             <input type="checkbox" , name="completion" , onClick="submit()"></li>
         <li>90 Day Goal: {{this.goal90}}</li>
