@@ -3,7 +3,16 @@
   <ul id="goalList">
     {{#each goals}}
     <div class="">
-      <li>Daily Goal: {{this.dailyGoal}}</li>
+      <li>
+        <form action='/updateGoal' method='post'>Daily Goal: {{this.dailyGoal}}
+          <input class="clip" value={{this.dailyGoal}} name="dailyGoal">
+          {{#if this.dailyCheck}}
+            <input type="checkbox", name="completion", onClick="submit()", checked>
+            {{else}}
+            <input type="checkbox", name="completion", onClick="submit()">
+          {{/if}}
+        </form>
+      </li>
       <li>90 Day Goal: {{this.goal90}}</li>
       <li class="clip" id="endDate">{{this.endDate}}</li>
     </div>

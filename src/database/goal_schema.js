@@ -21,6 +21,14 @@ const goalSchema = mongoose.Schema({
     type: String,
     required: true
   },
+  dailyCheck: {
+    type: Boolean,
+    default: false
+  },
+  dailyCounter: {
+    type: Number,
+    default: 0
+  },
   endDate: {
     type: Date,
     required: true
