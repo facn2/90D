@@ -1,7 +1,6 @@
 const { Goal } = require('../database/goal_schema');
 
 module.exports = (req, res) => {
-  console.log(1, req.body);
   const dailyGoal = req.body.dailyGoal;
   if (req.body.completion) {
     Goal.update({'dailyGoal': dailyGoal},
@@ -18,7 +17,7 @@ module.exports = (req, res) => {
       { '$set': {'dailyCheck': false}, '$inc': {'dailyCounter': -1}
       }, (err, result) => {
         if (err) {
-          console.log(34, err);
+          console.log('This did not update', err);
         } else {
           res.redirect('/goals');
         }

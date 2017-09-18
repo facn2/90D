@@ -13,7 +13,6 @@ var goalList = document.getElementById('goalList');
 var goals = goalList.children;
 Object.keys(goals).forEach((key) => {
   var goal = goals[key];
-  console.log(goal.children);
   var endDate = new Date(goal.children[2].innerText);
   var dayDiff = dateDiffInDays(today, endDate);
   var endDateItem = document.createElement('li');
