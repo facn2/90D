@@ -20,6 +20,10 @@ const goalSchema = mongoose.Schema({
   reward: {
     type: String,
     required: true
+  },
+  endDate: {
+    type: Date,
+    required: true
   }
 });
 

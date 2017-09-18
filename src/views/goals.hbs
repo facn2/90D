@@ -1,9 +1,13 @@
 <section>
   <h2>goals</h2>
-  <ul>
+  <ul id="goalList">
     {{#each goals}}
+    <div class="">
       <li>Daily Goal: {{this.dailyGoal}}</li>
       <li>90 Day Goal: {{this.goal90}}</li>
+      <li class="clip" id="endDate">{{this.endDate}}</li>
+    </div>
     {{/each}}
   </ul>
+  {{>goalCountdown}}
 </section>

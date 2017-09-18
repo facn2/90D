@@ -7,6 +7,7 @@ module.exports = (req, res) => {
   let userGoal = req.body;
   const parsedCookie = cookie.parse(req.headers.cookie);
   const email = parsedCookie.user_email;
+  console.log(userGoal);
 
   if (!userGoal.goal90 || !userGoal.dailyGoal || !userGoal.description || !userGoal.reward) {
     console.log('fuck');
@@ -20,7 +21,8 @@ module.exports = (req, res) => {
     goal90: req.body.goal90,
     dailyGoal: req.body.dailyGoal,
     description: req.body.description,
-    reward: req.body.reward
+    reward: req.body.reward,
+    endDate: req.body.endDate
   });
 
   console.log(newGoal);
