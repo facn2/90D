@@ -4,7 +4,6 @@ const { sign } = require('jsonwebtoken');
 require('env2')('./config.env');
 
 module.exports = (req, res) => {
-  console.log(req.body);
   let userData = req.body;
 
   if (!userData.firstName || !userData.lastName || !userData.email || !userData.password) {
@@ -25,7 +24,6 @@ module.exports = (req, res) => {
 
       newUser.save((err) => {
         if (err) {
-          console.log(err);
           res.render('error', {
             message: 'Sorry, the information you provided is all kinds of wrong', type: 'error'
           });
