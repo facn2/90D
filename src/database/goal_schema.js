@@ -20,6 +20,14 @@ const goalSchema = mongoose.Schema({
   reward: {
     type: String,
     required: true
+  },
+  dailyCheck: {
+    type: Boolean,
+    default: false
+  },
+  dailyCounter: {
+    type: Number,
+    default: 0
   }
 });
 
