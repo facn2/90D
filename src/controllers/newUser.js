@@ -8,7 +8,9 @@ module.exports = (req, res) => {
 
   if (!userData.firstName || !userData.lastName || !userData.email || !userData.password) {
     res.render('error', {
-      message: 'Sorry, your user details is a little lacking. King hates you.', type: 'error'
+      statusCode: 404,
+      message: 'Sorry, your user details is a little lacking. King hates you.',
+      type: 'error'
     });
   }
 
@@ -25,7 +27,9 @@ module.exports = (req, res) => {
       newUser.save((err) => {
         if (err) {
           res.render('error', {
-            message: 'Sorry, the information you provided is all kinds of wrong', type: 'error'
+            statusCode: 404,
+            message: 'Sorry, the information you provided is all kinds of wrong', 
+            type: 'error'
           });
         } else {
           let token = sign(userData.email, process.env.SECRET_KEY);
