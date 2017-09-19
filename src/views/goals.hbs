@@ -15,6 +15,9 @@
       </li>
       <li>90 Day Goal: {{this.goal90}}</li>
       <li class="clip" id="endDate">{{this.endDate}}</li>
+      <form class="" action="/goaldetails" method="get">
+        <button type="submit" name="goal" value={{this._id}}>More</button>
+      </form>
     </div>
     {{/each}}
   </ul>
