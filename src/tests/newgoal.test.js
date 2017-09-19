@@ -35,7 +35,7 @@ db.once('open', () => {
     if (err) {
       console.log('Error saving newUser to db');
     } else {
-      describe('new goal', () => {
+      describe('new goal view', () => {
         it('login to receive cookies', (done) => {
           request(app)
           .post('/validateLogin')
