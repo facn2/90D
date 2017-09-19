@@ -1,4 +1,4 @@
-const { users } = require('../database/user_schema');
+const { Users } = require('../database/user_schema');
 const bcrypt = require('bcryptjs');
 const { sign } = require('jsonwebtoken');
 require('env2')('./config.env');
@@ -11,10 +11,10 @@ module.exports = (req, res) => {
     });
   }
 
-  users.find({ email: userData.email }, (err, user) => {
+  Users.find({ email: userData.email }, (err, user) => {
     if (err) {
       // if an error was returned
-      console.log(err);
+      console.log('This is a find error: ', err);
     } else if (!user) { // this isn't quite right - actually returns empty array
       // Nothing matched
       res.render('error', {
