@@ -7,16 +7,22 @@ module.exports = (req, res) => {
   let userData = req.body;
 
   if (!userData.firstName || !userData.lastName || !userData.email || !userData.password) {
-    res.render('error', {
+    return res.render('error', {
       statusCode: 404,
-      message: 'Sorry, your user details is a little lacking. King hates you.',
+      message: 'Sorry, your user details is a little lacking.',
       type: 'error'
     });
   }
 
   const hashPw = userData.password;
   bcrypt.hash(hashPw, 10, (err, hashPw) => {
-    if (err) { return err; } else {
+    if (err) {
+      return res.render('error', {
+        statusCode: 404,
+        message: 'Sorry, hash peewee problem.',
+        type: 'error'
+      });
+    } else {
       let newUser = new Users({
         firstName: userData.firstName,
         lastName: userData.lastName,
@@ -26,9 +32,9 @@ module.exports = (req, res) => {
 
       newUser.save((err) => {
         if (err) {
-          res.render('error', {
+          return res.render('error', {
             statusCode: 404,
-            message: 'Sorry, the information you provided is all kinds of wrong',
+            message: 'Sorry, trouble with saving user. Shrug.',
             type: 'error'
           });
         } else {

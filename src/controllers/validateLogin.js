@@ -7,18 +7,26 @@ module.exports = (req, res) => {
   let userData = req.body;
   if (!userData.email || !userData.password) {
     return res.render('error', {
-      message: 'Sorry, your user details is a little lacking. King hates you.', type: 'error'
+      statusCode: 404,
+      message: 'Sorry, your user details are a little lacking. We disapprove.',
+      type: 'error'
     });
   }
 
   Users.find({ email: userData.email }, (err, user) => {
     if (err) {
       // if an error was returned
-      console.log('This is a find error: ', err);
+      return res.render('error', {
+        statusCode: 404,
+        message: 'Sorry, error, doing erroneous things.',
+        type: 'error'
+      });
     } else if (!user) { // this isn't quite right - actually returns empty array
       // Nothing matched
-      res.render('error', {
-        message: 'Yo go double check that email!', type: 'error'
+      return res.render('error', {
+        statusCode: 404,
+        message: 'Sorry, the information you provided is all kinds of wrong.',
+        type: 'error'
       });
     } else {
       // this is okay
@@ -27,8 +35,9 @@ module.exports = (req, res) => {
         if (err) {
           console.log(err);
         } else if (!response) {
-          res.render('error', {
-            message: 'Yo those password don\'t match!', type: 'error'
+          return res.render('error', {
+            message: 'Yo those password don\'t match!',
+            type: 'error'
           });
         } else {
           let token = sign(userData.email, process.env.SECRET_KEY);
