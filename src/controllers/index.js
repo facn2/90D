@@ -12,6 +12,7 @@ const error = require('./error');
 const goals = require('./goals');
 const logout = require('./logout');
 const updateGoal = require('./updateGoal');
+const goaldetails = require('./goaldetails');
 
 router.get('/signup', signup);
 router.post('/newUser', newUser);
@@ -22,6 +23,7 @@ router.get('/goals', validateToken, goals);
 router.get('/logout', logout);
 router.post('/addGoal', addGoal);
 router.post('/updateGoal', updateGoal);
+router.get('/goaldetails', goaldetails);
 
 router.use(error.client);
 router.use(error.server);
