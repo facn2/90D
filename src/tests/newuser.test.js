@@ -44,7 +44,7 @@ db.once('open', () => {
             console.log('Error testing find new user: ', err);
             done();
           }
-          expect(result).to.be.an('array').to.have.length(2);
+          expect(result).to.be.an('array');
           expect(result[0]).to.be.an('object').to.have.any.keys('_id', 'firstName', 'lastName', 'email', '$__', '$init', '_doc', 'errors', 'isNew', 'password');
           expect(result[0].firstName).to.be.equal('Matt');
           expect(result[0].lastName).to.be.equal('King');

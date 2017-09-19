@@ -6,7 +6,7 @@ require('env2')('./config.env');
 module.exports = (req, res) => {
   let userData = req.body;
   if (!userData.email || !userData.password) {
-    res.render('error', {
+    return res.render('error', {
       message: 'Sorry, your user details is a little lacking. King hates you.', type: 'error'
     });
   }
