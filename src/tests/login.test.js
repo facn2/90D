@@ -16,7 +16,6 @@ describe('login', () => {
     request(app)
       .get('/')
       .end((err, res) => {
-        console.log(res.header);
         should.not.exist(err);
         // should.not.be.empty();
         // expect(res.header).to.equal(true);

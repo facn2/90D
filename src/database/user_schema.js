@@ -7,8 +7,8 @@ const userSchema = mongoose.Schema({
   password: {type: String, required: true}
 });
 
-const users = mongoose.model('user', userSchema);
+const Users = mongoose.model('User', userSchema);
 
 module.exports = {
-  users
+  Users
 };

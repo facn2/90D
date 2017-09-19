@@ -1,7 +1,7 @@
 const chai = require('chai');
 const request = require('supertest');
 const mongoose = require('mongoose');
-const { users } = require('.././database/user_schema');
+const { Users } = require('.././database/user_schema');
 
 const should = chai.should();
 const expect = chai.expect;
@@ -18,7 +18,7 @@ db.once('open', () => {
   const app = require('./../app');
 
   const newUser = {
-    firstName: 'one',
+    firstName: 'Matt',
     lastName: 'King',
     email: 'matt@king',
     password: 'kingmatt',
@@ -39,16 +39,40 @@ db.once('open', () => {
       .send(newUser)
       .end((err, res) => {
         should.not.exist(err);
-        users.find({'firstName': 'one'}, (err, result) => {
-          if (err) console.log(err);
-          console.log('This is the result: ', result);
+        Users.find({'firstName': 'Matt'}, (err, result) => {
+          if (err) {
+            console.log('Error testing find new user: ', err);
+            done();
+          }
+          expect(result).to.be.an('array').to.have.length(1);
+          expect(result[0]).to.be.an('object').to.have.any.keys('_id', 'firstName', 'lastName', 'email', '$__', '$init', '_doc', 'errors', 'isNew', 'password');
+          done();
         });
-        should.exist(res.body);
+      });
+    });
+    it('body should exist and be empty', (done) => {
+      request(app)
+      .post('/newUser')
+      .send(newUser)
+      .end((err, res) => {
+        should.not.exist(err);
+        expect(res.body).to.be.empty.to.be.an('object');
+        done();
+      });
+    });
+    it('headers should exist and include keys', (done) => {
+      request(app)
+      .post('/newUser')
+      .send(newUser)
+      .end((err, res) => {
+        should.not.exist(err);
+        expect(res.headers).to.exist.to.be.an('object');
+        expect(res.headers).to.be.an('object').to.have.any.keys('content-type', 'content-length', 'etag', 'date', 'connection');
         done();
       });
     });
   });
   after(() => {
-    db.close();
+    db.dropDatabase();
   });
 });
