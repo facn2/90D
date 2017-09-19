@@ -1,16 +1,18 @@
-<header>
-  <!-- Insert User Name Here -->
-  <a href="/newGoal">New Goal</a>
-  <nav>
-    <ul>
-      <li>
-        <a href="/goals">Goals</a>
+<header class='bg-black-05 avenir f6 fw4 shadow-1 pa2 pb2 ttu tracked'>
+  {{#if username}}
+   <h2>Welcome {{username}}</h2>
+  {{/if}}
+  <a href="/newGoal" class='dim no-underline fr pr2 pv1'>New Goal</a>
+  <nav class=''>
+    <ul class='list mt4'>
+      <li class='dim dtc'>
+        <a class='no-underline mr4' href="/goals">Goals</a>
       </li>
-      <li>
-        <a href="/tips">Tips</a>
+      <li class='dim dtc'>
+        <a class='no-underline mr4' href="/tips">Tips</a>
       </li>
-      <li>
-        <a href="/logout">Logout</a>
+      <li class='dim dtc'>
+        <a class='no-underline mr4' href="/logout">Logout</a>
       </li>
     </ul>
   </nav>

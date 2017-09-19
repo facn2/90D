@@ -1,8 +1,8 @@
-<section>
+<section class=''>
   <h2>goals</h2>
   <ul id="goalList">
     {{#each goals}}
-    <div class="">
+    <div class="list">
       <li>
         <form action='/updateGoal' method='post'>Daily Goal: {{this.dailyGoal}}
           <input class="clip" value={{this.dailyGoal}} name="dailyGoal">

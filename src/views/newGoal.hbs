@@ -1,18 +1,18 @@
-<section class="">
-    <form action='/addgoal' method="post" class="" >
+<section class="black-80">
+    <form action='/addgoal' method="post" class="flex flex-column justify-center items-center h-100">
       <label for="goal90" class="clip">90 Days Goal</label>
-      <input class="" type="text" name="goal90" value="" placeholder="90 Day Goal">
+      <input class="w-60 pa2 ma2" type="text" name="goal90" value="" placeholder="90 Day Goal">
       <label for="dailyGoal" class="clip">Daily Goal</label>
-      <input class="" type="text" name="dailyGoal" value="" placeholder="Daily Goal">
+      <input class="w-60 pa2 ma2" type="text" name="dailyGoal" value="" placeholder="Daily Goal">
       <label for="description" class="clip">Description</label>
-      <input class="" type="text" name="description" value="" placeholder="Description">
+      <input class="w-60 pa2 ma2" type="text" name="description" value="" placeholder="Description">
       <label for="reward" class="clip">Reward</label>
-      <input class="" type="text" name="reward" value="" placeholder="Reward">
+      <input class="w-60 pa2 ma2" type="text" name="reward" value="" placeholder="Reward">
       <label for="endDate" class="clip"></label>
       <input class="clip" id="dateInput" type="text" name="endDate" value="">
-      <h3>End date:</h3>
+      <h2>End date:</h2>
       <div id="dateContainer"></div>
-      <button class="" type="submit" name="button">Add Goal</button>
+      <button class="w-20 pa1 ma2" type="submit" name="button">Add Goal</button>
     </form>
     {{>newGoalDate}}
 </section>
