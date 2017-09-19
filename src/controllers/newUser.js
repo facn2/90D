@@ -24,14 +24,13 @@ module.exports = (req, res) => {
 
       newUser.save((err) => {
         if (err) {
-          console.log(err);
           res.render('error', {
             message: 'Sorry, the information you provided is all kinds of wrong', type: 'error'
           });
         } else {
           let token = sign(userData.email, process.env.SECRET_KEY);
           res.append('Set-Cookie', `user_session=${token}`);
-          res.redirect('/');
+          res.redirect('/goals');
         }
       });
     }

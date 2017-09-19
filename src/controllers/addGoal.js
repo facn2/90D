@@ -7,7 +7,6 @@ module.exports = (req, res) => {
   let userGoal = req.body;
   const parsedCookie = cookie.parse(req.headers.cookie);
   const email = parsedCookie.user_email;
-  console.log(userGoal);
 
   if (!userGoal.goal90 || !userGoal.dailyGoal || !userGoal.description || !userGoal.reward) {
     console.log('fuck');
@@ -25,11 +24,8 @@ module.exports = (req, res) => {
     endDate: req.body.endDate
   });
 
-  console.log(newGoal);
-
   newGoal.save((err) => {
     if (err) {
-      console.log(err);
       res.render('error', {
         message: 'Sorry, your ambitions are breaking up with you. It\'s not you, it\'s them',
         type: 'error'
