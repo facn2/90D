@@ -1,3 +1,15 @@
+const { Users } = require('../database/user_schema');
+const cookie = require('cookie');
+
 module.exports = (req, res) => {
-  res.render('advice');
+  const parsedCookie = cookie.parse(req.headers.cookie);
+  const userEmail = parsedCookie.user_email;
+
+  Users.findOne({'email': userEmail}, (err, user) => {
+    if (err) {
+      console.log('This is the error from findOne: ', err);
+      return err;
+    }
+    res.render('advice', {username: user.firstName});
+  });
 };

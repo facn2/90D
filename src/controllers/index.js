@@ -25,7 +25,7 @@ router.get('/logout', logout);
 router.post('/addGoal', addGoal);
 router.post('/updateGoal', updateGoal);
 router.get('/goaldetails', goaldetails);
-router.get('/advice', advice);
+router.get('/advice', validateToken, advice);
 
 router.use(error.client);
 router.use(error.server);
