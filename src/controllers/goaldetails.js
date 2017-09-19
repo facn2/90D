@@ -11,12 +11,12 @@ module.exports = (req, res) => {
   Users.findOne({'email': userEmail}, (err, user) => {
     if (err) return err;
     const username = user.firstName;
-    Goal.find({ '_id': req.query.goal }, (err, result) => {
+    Goal.findOne({ '_id': req.query.goal }, (err, result) => {
       if (err) {
         console.log('This is a find error: ', err);
       } else {
       // pass all results to the goals view
-        res.render('goaldetails', { goal: result[0], username: username });
+        res.render('goaldetails', { goal: result, username: username });
       }
     });
   });
