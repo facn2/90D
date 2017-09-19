@@ -4,7 +4,6 @@ const { sign } = require('jsonwebtoken');
 require('env2')('./config.env');
 
 module.exports = (req, res) => {
-  console.log(req.body);
   let userData = req.body;
 
   if (!userData.firstName || !userData.lastName || !userData.email || !userData.password) {
