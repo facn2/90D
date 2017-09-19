@@ -2,6 +2,7 @@ const chai = require('chai');
 const request = require('supertest');
 
 const should = chai.should();
+const expect = chai.expect;
 
 const app = require('./../app');
 
@@ -17,8 +18,7 @@ describe('login', () => {
       .get('/')
       .end((err, res) => {
         should.not.exist(err);
-        // should.not.be.empty();
-        // expect(res.header).to.equal(true);
+        expect(res.headers).to.be.an('object').to.have.any.keys('content-type', 'content-length', 'etag', 'date', 'connection');
         done();
       });
   });

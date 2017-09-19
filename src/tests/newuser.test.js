@@ -46,6 +46,9 @@ db.once('open', () => {
           }
           expect(result).to.be.an('array').to.have.length(1);
           expect(result[0]).to.be.an('object').to.have.any.keys('_id', 'firstName', 'lastName', 'email', '$__', '$init', '_doc', 'errors', 'isNew', 'password');
+          expect(result[0].firstName).to.be.equal('Matt');
+          expect(result[0].lastName).to.be.equal('King');
+          expect(result[0].email).to.be.equal('matt@king');
           done();
         });
       });
