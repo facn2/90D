@@ -1,4 +1,4 @@
-const { users } = require('../database/user_schema');
+const { Users } = require('../database/user_schema');
 const bcrypt = require('bcryptjs');
 const { sign } = require('jsonwebtoken');
 require('env2')('./config.env');
@@ -15,7 +15,7 @@ module.exports = (req, res) => {
   const hashPw = userData.password;
   bcrypt.hash(hashPw, 10, (err, hashPw) => {
     if (err) { return err; } else {
-      let newUser = new users({
+      let newUser = new Users({
         firstName: userData.firstName,
         lastName: userData.lastName,
         email: userData.email,

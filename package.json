@@ -15,7 +15,8 @@
   "semistandard": {
     "globals": [
       "describe",
-      "it"
+      "it",
+      "after"
     ],
     "ignore": [
       "/src/controllers/newUser.js"
