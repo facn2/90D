@@ -28,12 +28,13 @@ module.exports = (req, res) => {
         if (err) {
           res.render('error', {
             statusCode: 404,
-            message: 'Sorry, the information you provided is all kinds of wrong', 
+            message: 'Sorry, the information you provided is all kinds of wrong',
             type: 'error'
           });
         } else {
           let token = sign(userData.email, process.env.SECRET_KEY);
           res.append('Set-Cookie', `user_session=${token}`);
+          res.append('Set-Cookie', `user_email=${userData.email}`);
           res.redirect('/goals');
         }
       });

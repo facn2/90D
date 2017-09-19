@@ -4,6 +4,7 @@ const path = require('path');
 // const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
+const cookieParser = require('cookie-parser');
 
 const controllers = require('./controllers/index');
 const helpers = require('./views/helpers/index');
@@ -25,6 +26,7 @@ app.engine(
 
 // for parsing application/json
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // for parsing xwww- /URL-encoded bodies
 app.use(bodyParser.urlencoded({
