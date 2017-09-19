@@ -10,13 +10,20 @@ module.exports = (req, res) => {
   // get user and goal data from the database
   Users.findOne({'email': userEmail}, (err, user) => {
     if (err) {
-      console.log('This is the error from findOne: ', err);
-      return err;
+      return res.render('error', {
+        statusCode: 404,
+        message: 'Sorry, cannot find the user email. Sometimes, you just have to accept your losses and move on.',
+        type: 'error'
+      });
     }
     const username = user.firstName;
     Goal.find({ 'owner': userEmail }, (err, results) => {
       if (err) {
-        console.log('This is a find error: ', err);
+        return res.render('error', {
+          statusCode: 404,
+          message: 'Sorry, cannot find the goals. Good time to look up and smell the falafel balls.',
+          type: 'error'
+        });
       } else {
       // pass all results to the goals view
         res.render('goals', { goals: results, username: username });

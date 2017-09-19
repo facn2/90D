@@ -10,8 +10,9 @@ module.exports = (req, res) => {
 
   if (!userGoal.goal90 || !userGoal.dailyGoal || !userGoal.description || !userGoal.reward) {
     console.log('fuck');
-    res.render('error', {
-      message: 'Gah',
+    return res.render('error', {
+      statusCode: 404,
+      message: 'Sorry, you are missing some fields. It\'s all or nothing with us. Read the tips page if you have any problemo.',
       type: 'error'
     });
   }
@@ -26,8 +27,9 @@ module.exports = (req, res) => {
 
   newGoal.save((err) => {
     if (err) {
-      res.render('error', {
-        message: 'Sorry, your ambitions are breaking up with you. It\'s not you, it\'s them',
+      return res.render('error', {
+        statusCode: 404,
+        message: 'Sorry, there is an error saving your goal.',
         type: 'error'
       });
     } else {
