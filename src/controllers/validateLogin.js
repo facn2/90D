@@ -33,6 +33,7 @@ module.exports = (req, res) => {
         } else {
           let token = sign(userData.email, process.env.SECRET_KEY);
           res.append('Set-Cookie', `user_session=${token}`);
+          res.append('Set-Cookie', `user_email=${userData.email}`);
           res.redirect('/goals');
         }
       });

@@ -9,7 +9,10 @@ module.exports = (req, res) => {
   const userEmail = parsedCookie.user_email;
   // get user and goal data from the database
   Users.findOne({'email': userEmail}, (err, user) => {
-    if (err) return err;
+    if (err) {
+      console.log('This is the error from findOne: ', err);
+      return err;
+    }
     const username = user.firstName;
     Goal.find({ 'owner': userEmail }, (err, results) => {
       if (err) {
