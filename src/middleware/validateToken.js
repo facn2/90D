@@ -8,11 +8,10 @@ module.exports = (req, res, next) => {
   verify(userSession, process.env.SECRET_KEY, (err, decoded) => {
     if (err) {
       // error page saying not logged in
-      res.render('error', {
+      return res.render('error', {
         message: 'What you playing at? Go log in!', type: 'error'
       });
     } else {
-      res.append('Set-Cookie', `user_email=${decoded}`);
       next();
     }
   });

@@ -10,6 +10,6 @@ module.exports = (req, res) => {
       console.log('This is the error from findOne: ', err);
       return err;
     }
-    res.render('newGoal', {username: user.firstName});
+    res.render('advice', {username: user.firstName});
   });
 };

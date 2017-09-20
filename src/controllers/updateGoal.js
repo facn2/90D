@@ -7,7 +7,11 @@ module.exports = (req, res) => {
       { '$set': {'dailyCheck': true}, '$inc': {'dailyCounter': +1}
       }, (err, result) => {
         if (err) {
-          console.log(34, err);
+          return res.render('error', {
+            statusCode: 404,
+            message: 'Sorry, problem checking off your goals. Fun fact: There are at least five species of flying snakes',
+            type: 'error'
+          });
         } else {
           res.redirect('/goals');
         }
@@ -17,15 +21,11 @@ module.exports = (req, res) => {
       { '$set': {'dailyCheck': false}, '$inc': {'dailyCounter': -1}
       }, (err, result) => {
         if (err) {
-<<<<<<< Updated upstream
-          console.log('This did not update', err);
-=======
           return res.render('error', {
             statusCode: 404,
-            message: 'Sorry, problem un-checking off your goals. Fun fact: Bananas are curved because they grow towards the sun, instead of towards the ground. This is called negative geotropism',
+            message: 'Sorry, problem un-checking off your goals. Fun fact: Bananas are curved because they grow towards the sun, instead of toward the ground. This is called negative geotropism',
             type: 'error'
           });
->>>>>>> Stashed changes
         } else {
           res.redirect('/goals');
         }

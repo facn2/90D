@@ -12,21 +12,21 @@ module.exports = (req, res) => {
     if (err) {
       return res.render('error', {
         statusCode: 404,
-        message: 'Sorry, cannot find the user email. Sometimes, you just have to accept your losses and move on.',
+        message: 'Sorry, cannot find the user. Come back when our database cares enough to try again.',
         type: 'error'
       });
     }
     const username = user.firstName;
-    Goal.find({ 'owner': userEmail }, (err, results) => {
+    Goal.findOne({ '_id': req.query.goal }, (err, result) => {
       if (err) {
         return res.render('error', {
           statusCode: 404,
-          message: 'Sorry, cannot find the goals. Good time to look up and smell the falafel balls.',
+          message: 'Sorry, cannot find goal details. Come back when our database cares enough to try again.',
           type: 'error'
         });
       } else {
-      // pass all results to the goals view
-        res.render('goals', { goals: results, username: username });
+        // pass all results to the goals view
+        res.render('goaldetails', { goal: result, username: username });
       }
     });
   });
