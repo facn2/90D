@@ -13,6 +13,7 @@ const goals = require('./goals');
 const logout = require('./logout');
 const updateGoal = require('./updateGoal');
 const goaldetails = require('./goaldetails');
+const advice = require('./advice');
 
 router.get('/signup', signup);
 router.post('/newUser', newUser);
@@ -24,6 +25,7 @@ router.get('/logout', logout);
 router.post('/addGoal', addGoal);
 router.post('/updateGoal', updateGoal);
 router.get('/goaldetails', goaldetails);
+router.get('/advice', validateToken, advice);
 
 router.use(error.client);
 router.use(error.server);
