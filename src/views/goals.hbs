@@ -1,25 +1,31 @@
-<section class=''>
-  <h2>goals</h2>
-  <ul id="goalList">
-    {{#each goals}}
-    <div class="list">
-      <li>
-        <form action='/updateGoal' method='post'>Daily Goal: {{this.dailyGoal}}
-          <input class="clip" value={{this.dailyGoal}} name="dailyGoal">
-          {{#if this.dailyCheck}}
-            <input type="checkbox", name="completion", onClick="submit()", checked>
-            {{else}}
-            <input type="checkbox", name="completion", onClick="submit()">
-          {{/if}}
-        </form>
-      </li>
-      <li>90 Day Goal: {{this.goal90}}</li>
-      <li class="clip" id="endDate">{{this.endDate}}</li>
-      <form class="" action="/goaldetails" method="get">
-        <button type="submit" name="goal" value={{this._id}}>More</button>
-      </form>
-    </div>
-    {{/each}}
-  </ul>
-  {{>goalCountdown}}
-</section>
+<body class=''>
+    <h2 class='flex justify-center'>Your Goals</h2>
+    <div class="container mw7">
+    
+    <ul id="goalList" class='mr4'>
+      {{#each goals}}
+      <div class="list ph3 pv3 br4">
+        <div class="">
+          <li>
+            <form action='/updateGoal' class='f3 f3-m mb2 mt4' method='post'>Daily Goal: {{this.dailyGoal}}
+              <input class="clip" value={{this.dailyGoal}} name="dailyGoal">
+              {{#if this.dailyCheck}}
+                <input type="checkbox", class='fr pt3', name="completion", onClick="submit()", checked>
+                {{else}}
+                <input type="checkbox", class='fr pt3', name="completion", onClick="submit()">
+              {{/if}}
+            </form>
+          </li>
+        </div>
+        
+     <li class="clip" id="endDate">{{this.endDate}}</li>
+          <li class='' id='daysLeft'></li>
+          <form class="" action="/goaldetails" method="get">
+            <button class="input-reset fr dib w-30 f5 ph3 pv2 mb2 bg-light-gray" type="submit" name="goal" value={{this._id}}>More</button>
+          </form>
+      </div>
+      {{/each}}
+    </ul>
+    {{>goalCountdown}}
+  </div>
+</body>

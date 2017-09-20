@@ -17,5 +17,6 @@ Object.keys(goals).forEach((key) => {
   var dayDiff = dateDiffInDays(today, endDate);
   var endDateItem = document.createElement('li');
   endDateItem.innerText = 'Days left: ' + dayDiff;
+  endDateItem.className = ('dib fl pb3 w-70 bg-light-gray');
   goal.appendChild(endDateItem);
 });
